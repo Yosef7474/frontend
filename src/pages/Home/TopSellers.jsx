@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import BookCard from '../books/BookCard'
 
 
-import { Pagination } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const categories = ["chose a genre", "Business" , "Fiction", "Horor", "Adventure"]
 
@@ -48,25 +49,28 @@ const TopSellers = () => {
 
         <Swiper
         slidesPerView={1}
-        spaceBetween={10}
-        pagination={{
-          clickable: true,
-        }}
+        spaceBetween={30}
+        navigation={true}
+        
         breakpoints={{
           640: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 20,
           },
           768: {
-            slidesPerView: 4,
+            slidesPerView: 2,
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 5,
+            slidesPerView: 2,
             spaceBetween: 50,
           },
+          1180: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          }
         }}
-        modules={[Pagination]}
+        modules={[Pagination, Navigation]}
         className="mySwiper"
       >
         {
