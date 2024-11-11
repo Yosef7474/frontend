@@ -81,12 +81,7 @@ const TopSellers = () => {
                        
                    
                 ))
-            }
-
-
-
-
-        
+            }  
        
       </Swiper>
 
