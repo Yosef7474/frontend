@@ -27,15 +27,12 @@ const BookCard = ({book}) => {
       <span className="text-gray-500 line-through ml-2">${book?.oldPrice}</span>
     </div>
 
-    <button className="w-full bg-blue-600 text-white py-2 rounded-md flex justify-center items-center gap-2 font-medium transition duration-300 hover:bg-blue-700">
+    <button className="w-full bg-primary text-white py-2 rounded-md flex justify-center items-center gap-2 font-medium transition duration-300 hover:bg-blue-700">
       <HiOutlineShoppingBag />
       <span>Add to Cart</span>
     </button>
   </div>
 </div>
-
-  
-
   )
 }
 

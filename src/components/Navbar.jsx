@@ -10,6 +10,7 @@ import { TbUserHexagon } from "react-icons/tb";
 import { FaRegHeart } from "react-icons/fa6";
 import { FaCartPlus } from "react-icons/fa";
 
+
 import avatarImg from "../assets/avatar.png"
 import logoImg from "../assets/logo.jpg"
 
@@ -57,6 +58,7 @@ const Navbar = () => {
                         currentUser ? <>
                         <button onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
                            <img src={avatarImg} alt="" className={`size-7 rounded-full ${currentUser ? 'ring-2 ring-blue-500' : ''}`} />
+
                         </button>
                         {/* show dropdown */}
                         {
