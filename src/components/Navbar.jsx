@@ -11,6 +11,7 @@ import { FaRegHeart } from "react-icons/fa6";
 import { FaCartPlus } from "react-icons/fa";
 
 import avatarImg from "../assets/avatar.png"
+import logoImg from "../assets/logo.jpg"
 
 const navigation = [
         {name: "Dashboard", href:"/Dashboard"},
@@ -33,7 +34,7 @@ const Navbar = () => {
 
         <div className='flex items-center md:gap-16 gap-4'>
             <Link to="/">
-            <FaBars className='size-6' />
+            <img src={logoImg} alt="" className={`size-12 rounded-full `}/>
             </Link>
 
             {/* search input */}
