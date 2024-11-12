@@ -2,8 +2,16 @@ import React from 'react'
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { getImgUrl } from '../../utils/getImgUrl';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/features/cart/cartSlice';
+
 
 const BookCard = ({book}) => {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product))
+  }
   return (
     <div className="p-6 max-w-md bg-white shadow-lg rounded-lg transition-transform duration-300 hover:scale-105 flex flex-col sm:flex-row">
   <Link to={`/books/${book._id}`} className="block overflow-hidden rounded-lg sm:w-1/2">
@@ -27,7 +35,10 @@ const BookCard = ({book}) => {
       <span className="text-gray-500 line-through ml-2">${book?.oldPrice}</span>
     </div>
 
-    <button className="w-full bg-primary text-white py-2 rounded-md flex justify-center items-center gap-2 font-medium transition duration-300 hover:bg-blue-700">
+    <button
+    onClick={() => handleAddToCart(book)}
+     className="w-full bg-primary text-white py-2 rounded-md flex justify-center items-center gap-2 font-medium transition duration-300 hover:bg-blue-700"
+    >
       <HiOutlineShoppingBag />
       <span>Add to Cart</span>
     </button>
