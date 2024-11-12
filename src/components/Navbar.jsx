@@ -93,7 +93,7 @@ const Navbar = () => {
         <FaRegHeart className='size-6' />
         </button>
 
-        <Link to="/cart" className='bg-primary rounded-[10px] p-1 sm:px-6 py-2 flex items-center'>
+        <Link to="/CartPage" className='bg-primary rounded-[10px] p-1 sm:px-6 py-2 flex items-center'>
         <FaCartPlus className='size-6' />
         {
             cartItems.length > 0  ? <span className='text-sm font-semibold sm:ml-1'>{cartItems.length}

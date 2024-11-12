@@ -17,12 +17,10 @@ const cartSlice = createSlice({
                 alert("Item added")
             }else{
                 alert("Item already exists")
-
-
             }
-        }
+        }    
     }
-})
+})          
 
 export const {addToCart} = cartSlice.actions;
 export default cartSlice.reducer;
