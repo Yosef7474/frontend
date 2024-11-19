@@ -6,6 +6,7 @@ import Register from "../components/register";
 import Cart from "../components/CartPage";
 import CartPage from "../components/CartPage";
 import CheckoutPage from "../components/CheckoutPage";
+import AdminRoute from "./AdminRoute";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +40,30 @@ const router = createBrowserRouter([
         
       ]
     },
+    {
+      path: "/dashboard",
+      element: <AdminRoute><div>Admin Dashboard</div></AdminRoute>,
+      children: [
+        {
+          path: "",
+          element:  <AdminRoute><div>Dashboard Home</div></AdminRoute>
+        },
+        {
+          path: "add-new-book",
+          element: <AdminRoute><div>Add Book</div></AdminRoute>
+        },
+        {
+          path: "edit-book/:id",
+          element: <AdminRoute><div>Edit Book</div></AdminRoute>
+        },
+        {
+          path: "manage-books/:id",
+          element: <div>Manage Books</div>
+        }
+
+      ]
+
+    }
   ]);
 
   export default router;  

@@ -24,15 +24,15 @@ const BookCard = ({book}) => {
 
   <div className="p-4 sm:w-1/2">
     <Link to={`/books/${book._id}`} className="block hover:text-blue-600">
-      <h3 className="text-xl font-bold mb-2">Book Title</h3>
+      <h3 className="text-xl font-bold mb-2">{book?.title}</h3>
     </Link>
     <p className="text-gray-700 mb-4 leading-relaxed">
       {book.description.length > 80 ? `${book.description.slice(0, 80)}...` : book.description}
     </p>
 
     <div className="flex items-center justify-between mb-4">
-      <span className="text-lg font-semibold text-green-600">${book?.newPrice}</span>
-      <span className="text-gray-500 line-through ml-2">${book?.oldPrice}</span>
+      <span className="text-lg font-semibold text-green-600">Br {book?.newPrice}</span>
+      <span className="text-gray-500 line-through ml-2">Br {book?.oldPrice}</span>
     </div>
 
     <button

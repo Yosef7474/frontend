@@ -22,21 +22,7 @@ const Footer = () => {
         </div>
 
         {/* Right Side - Newsletter */}
-        <div className="md:w-1/2 w-full">
-          <p className="mb-4">
-            Subscribe to our newsletter to receive the latest updates, news, and offers!
-          </p>
-          <div className="flex">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full px-4 py-2 rounded-l-md text-black"
-            />
-            <button className="bg-primary px-6 py-2 rounded-r-md hover:bg-primary-dark">
-              Subscribe
-            </button>
-          </div>
-        </div>
+       
       </div>
 
       {/* Bottom Section */}

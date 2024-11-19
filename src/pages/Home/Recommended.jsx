@@ -9,9 +9,6 @@ import 'swiper/css/navigation';
 import BookCard from '../books/BookCard';
 
 
-
-
-
 const Recommended = () => {
 
     const [books, setBooks] = useState([])
@@ -64,15 +61,8 @@ const Recommended = () => {
             ))
         }
 
-   
   </Swiper>
     </div>
-
-   
-
-    
-
-    
   )
 }
 
