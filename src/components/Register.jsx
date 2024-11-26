@@ -4,9 +4,13 @@ import { Link } from 'react-router-dom'
 import { useForm } from "react-hook-form"
 
 import { FaGoogle } from "react-icons/fa6";
+import { useAuth } from '../context/AuthContext';
 
 const Register = () => {
-    const [message, setMessage] = useState("")
+    const [message, setMessage] = useState("");
+    const {registerUser, signInwithGoogle} = useAuth()
+    const navigate = useNavigate()
+    
     const {
         register,
         handleSubmit,
@@ -14,13 +18,30 @@ const Register = () => {
         formState: { errors },
       } = useForm()
 
-      const onSubmit = (data) => console.log(data)
 
-      const handleGoogleSignIn = () => {
-        
+//  register user
+      const onSubmit = async (data) => {
+        // console.log(data)
+        try {
+            await registerUser(data.email, data.password);
+            alert("REGISTERED !!!")
+            navigate("/")
+        } catch (error) {
+            setMessage("please Enter a valid email")
+            console.error(error)
+        }
       }
 
-
+      const handleGoogleSignIn = async () => {
+        try {
+            await signInwithGoogle();
+            alert("Logged in !!!")
+            navigate("/")
+        } catch (error) {
+            alert("Google sign in failed")
+            console.error(error)
+        }
+      }
 
   return (
     <div className="h-[calc(100vh-120px)] flex items-center justify-center ">

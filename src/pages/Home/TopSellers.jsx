@@ -8,22 +8,19 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { useFetchAllBooksQuery } from '../../redux/features/cart/booksApi';
 
 const categories = ["chose a genre", "Business" , "Fiction", "Horor", "Adventure"]
 
 const TopSellers = () => {
 
-    const [books, setBooks] = useState([])
+    
     const [selectedCategory, setselectedCategory] = useState("Choose Genre")
 
-    useEffect(() => {
-        fetch("books.json")
-        .then(res => res.json())
-        .then((data) => setBooks(data))
-    }, [])
-
-    const filteredBooks = selectedCategory === "Choose Genre" ? books: books.filter(book => book.category === selectedCategory.toLocaleLowerCase())
-    console.log(filteredBooks)
+    const {data: books = []} = useFetchAllBooksQuery();
+ 
+    const filteredBooks = selectedCategory === "Choose Genre" ? books : books.filter(book => book.category === selectedCategory.toLocaleLowerCase())
+  
     
 
   return (
@@ -44,8 +41,6 @@ const TopSellers = () => {
             </select>
 
         </div>
-
-
 
         <Swiper
         slidesPerView={1}
@@ -84,10 +79,6 @@ const TopSellers = () => {
             }  
        
       </Swiper>
-
-        
-            
-        
 
     </div>
   )
